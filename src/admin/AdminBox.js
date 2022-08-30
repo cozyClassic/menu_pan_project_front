@@ -1,33 +1,30 @@
-// import { useState } from "react";
+import { useState } from "react";
 import GetProps from "./GetProps";
-// import InputProps from "./InputProps";
-// import { useParams } from "react-router-dom";
+import InputProps from "./InputProps";
 
 function AdminBox(props){
-  // const [updating, setUpdate] = useState(false);
-  // const [value, setValue] = useState(data.value);
-  // const onChange = (event) => setValue(event.target.value)
-  let updating = false;
-  // const value = Object.entries(props.data)
-  // console.log(data)
-  const get_props = Object.entries(props.data)
+  const [updating, setUpdate] = useState(true);
+  let datas = Object.entries(props.data)
+  const update = () => setUpdate(!updating)
 
   return (
     <div className="AdminBox">
+      <form>
       <h2> Admin Box! </h2>
       <button className="plusDepth"> 하위 보기 </button>
-      <button className="update"> 수정 </button>
+      <button className="update" onClick={update}> 수정 </button>
       <button className="delete"> 삭제 </button>
-      {get_props.map((key_value) => 
-        <GetProps className={key_value[0]} value={key_value[1]} />
-      )}
-      {/* {updating ? ( 
-        data.map((_, prop) => 
-          <inputProps {...prop}/>)
+
+      {updating ? ( 
+        datas.map((key_value) => 
+        <GetProps key={key_value[0]} className={key_value[0]} value={key_value[1]} />
+        )
         ):(
-        data.map((_, prop) => 
-          <GetProps {...prop}/>)
-        )} */}
+          datas.map((key_value) => 
+          <InputProps key={key_value[0]} className={key_value[0]} value={key_value[1]} />
+        )
+        )}
+        </form>
     </div>
   )
 }

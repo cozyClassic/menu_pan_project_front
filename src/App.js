@@ -2,6 +2,8 @@ import {useState} from "react";
 
 import AdminBox from './admin/AdminBox';
 
+import "./App.css"
+
 const MOCK1 = [
   {
   name : "스타벅스",

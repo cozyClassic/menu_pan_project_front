@@ -1,0 +1,23 @@
+.AdminBox {
+    background-color: aliceblue;
+    min-width: 800px;
+    max-width: 80%;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    margin: 1%;
+}
+
+.AdminBox .dataType {
+    display: inline-block;
+    margin-right: 600px;
+}
+
+.AdminBox .rightButton {
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.getProp {
+    margin-top: 10px;
+}

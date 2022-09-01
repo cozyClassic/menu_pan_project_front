@@ -1,6 +1,7 @@
 import { useState } from "react";
 import GetProps from "./GetProps";
 import InputProps from "./InputProps";
+import "./AdminBox.css";
 
 function AdminBox(props){
   const [updating, setUpdate] = useState(true);
@@ -10,10 +11,10 @@ function AdminBox(props){
   return (
     <div className="AdminBox">
       <form>
-      <h2> Admin Box! </h2>
-      <button className="plusDepth"> 하위 보기 </button>
-      <button className="update" onClick={update}> 수정 </button>
-      <button className="delete"> 삭제 </button>
+      <h2 className="dataType"> Admin Box! </h2>
+      <button className="rightButton plusDepth"> 하위 보기 </button>
+      <button className="rightButton update" onClick={update}> 수정 </button>
+      <button className="rightButton delete"> 삭제 </button>
 
       {updating ? ( 
         datas.map((key_value) => 

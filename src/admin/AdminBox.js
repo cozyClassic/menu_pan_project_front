@@ -6,7 +6,9 @@ import "./AdminBox.css";
 function AdminBox(props){
   const [updating, setUpdate] = useState(true);
   let datas = Object.entries(props.data)
-  const update = () => setUpdate(!updating)
+  const update = () => {
+    setUpdate(!updating)
+  }
 
   return (
     <div className="AdminBox">

@@ -13,7 +13,7 @@ function App() {
     const API = `http://localhost:8000/admin${path}`;
     const response = await fetch(API);
     const json = await response.json();
-    setData([...json.data]);
+    setData([...json]);
     setLoading(false);
   }
 
